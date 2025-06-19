@@ -135,7 +135,9 @@ if uploaded_file:
             st.markdown(f"- **{item['ingredient']}**: {item['info']}")
 
     st.subheader("Full OCR Text Output")
-    st.text_area("", ocr_text, height=200)
+    # st.text_area("", ocr_text, height=200)
+    st.text_area("Full OCR Text Output", ocr_text, height=200)
+
 
 else:
     st.info("Upload an image to start scanning your skincare label.")
