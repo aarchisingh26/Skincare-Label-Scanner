@@ -2,12 +2,21 @@
 FROM python:3.10-slim
 
 # Install Tesseract OCR system dependencies
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     tesseract-ocr \
+#     libtesseract-dev \
+#     libleptonica-dev \
+#     pkg-config \
+#     && rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     tesseract-ocr \
+    tesseract-ocr-eng \
     libtesseract-dev \
     libleptonica-dev \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
+
 
 # Set working directory inside the container
 WORKDIR /app
