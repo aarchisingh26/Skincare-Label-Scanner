@@ -108,7 +108,7 @@ uploaded_file = st.file_uploader("Upload skincare label image", type=["jpg","jpe
 
 if uploaded_file:
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
 
     with st.spinner("Running OCR and analyzing ingredients..."):
         ocr_text = extract_text_from_image(image)
